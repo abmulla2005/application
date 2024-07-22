@@ -14,6 +14,11 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
+
+    app.get('/', (req, res) => {
+        res.send('Welcome to the homepage!');
+      });
+
 app.use('/api/auth', authRoutes);
 
 const PORT = process.env.PORT || 5000;
