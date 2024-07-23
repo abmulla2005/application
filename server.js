@@ -6,6 +6,12 @@ require('dotenv').config();
 
 
 const app = express();
+const cors = require('cors')
+const corsConfig = {
+  origin:"*",
+  credential:true,
+  methods:["GET","POST","PUT","DELETE"],
+}
 app.use(bodyParser.json());
 app.use(express.json());
 
